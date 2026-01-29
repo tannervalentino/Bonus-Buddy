@@ -1,7 +1,7 @@
 # Bonus Buddy
 
 A Chrome/Brave extension that automatically claims Twitch channel point bonuses across all your open streams.
-
+![example](bonus-buddy/instructions/plugin-example.png)
 ## Features
 
 - 🎯 **Auto-Claims Bonuses** - Never miss a channel point bonus again
