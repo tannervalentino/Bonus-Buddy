@@ -1,0 +1,168 @@
+:root {
+  --bg-dark: #18181b;
+  --bg-light: #1f1f23;
+  --accent: #9147ff;
+  --text-primary: #ffffff;
+  --text-secondary: #c7c7d1;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  width: 320px;
+  padding: 12px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  font-size: 20px;
+  margin: 0 0 10px 0;
+}
+
+#total-points {
+  text-align: center;
+  font-size: 14px;
+  color: var(--accent);
+  font-weight: bold;
+  margin-bottom: 12px;
+  padding: 8px;
+  background: var(--bg-light);
+  border-radius: 8px;
+}
+
+#current-streamer-header {
+  display: flex;
+  align-items: center;
+  background: var(--bg-light);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+#streamer-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+#streamer-info {
+  flex: 1;
+}
+
+#streamer-info h2 {
+  margin: 0 0 4px 0;
+  font-size: 17px;
+}
+
+#streamer-points,
+#watch-time {
+  display: block;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 2px 0;
+}
+
+#toolbar {
+  background: var(--bg-light);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 12px;
+}
+
+#toolbar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+#toolbar-header:hover {
+  opacity: 0.8;
+}
+
+#toolbar h3 {
+  margin: 0;
+  font-size: 15px;
+  flex: 1;
+}
+
+#toolbar-toggle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  transition: transform 0.2s;
+}
+
+#channel-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#channel-list li {
+  background: var(--bg-dark);
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 6px;
+  transition: background 0.2s;
+  font-size: 14px;
+}
+
+#channel-list li:hover {
+  background: var(--accent);
+}
+
+#channel-details {
+  background: var(--bg-light);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#channel-details h3 {
+  margin-top: 0;
+  font-size: 15px;
+}
+
+#channel-details ul {
+  padding-left: 16px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin: 8px 0;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+#channel-details ul li {
+  margin-bottom: 6px;
+}
+
+#channel-details p {
+  margin: 8px 0;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a970ff;
+}
