@@ -1,7 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Twitch Bonus Claimer",
-  "version": "1.5",
+  "name": "Bonus Buddy",
+  "version": "2.3.0",
+  "description": "Automatically claims Twitch channel point bonuses and tracks your watch time",
   "permissions": ["storage", "scripting"],
   "host_permissions": ["*://*.twitch.tv/*"],
   "background": { "service_worker": "background.js" },
@@ -13,6 +14,10 @@
     }
   ],
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": "icon-gray.png"
+  },
+  "icons": {
+    "48": "icon.png"
   }
 }

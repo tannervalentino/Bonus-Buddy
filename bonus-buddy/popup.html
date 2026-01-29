@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bonus Buddy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="main-container">
+    <div id="header">
+      <h1>Bonus Buddy</h1>
+      <div id="header-buttons">
+        <button id="chart-button" title="Claimed Channels">
+          <img src="chart-icon.png" alt="Channels" />
+        </button>
+        <button id="settings-button" title="Settings">
+          <img src="settings-icon.png" alt="Settings" />
+        </button>
+      </div>
+    </div>
+
+    <div id="total-points">Total Points Claimed: 0</div>
+
+    <div id="current-streamer-header">
+      <img id="streamer-avatar" src="" alt="Avatar" />
+      <div id="streamer-info">
+        <div id="streamer-title">
+          <h2 id="streamer-name">—</h2>
+          <span id="game-name">—</span>
+        </div>
+        <span id="streamer-points">Collected Points: 0 pts</span>
+        <span id="streak-counter">🔥 0 day streak</span>
+      </div>
+    </div>
+
+    <div id="channel-details">
+      <h3>Today's Claim History</h3>
+      <ul id="claim-history-list"></ul>
+    </div>
+  </div>
+
+  <div id="claimed-channels-menu" class="hidden">
+    <div id="menu-header">
+      <h3>Claimed Channels</h3>
+      <button id="close-menu">✕</button>
+    </div>
+    <div id="channels-list"></div>
+  </div>
+
+  <div id="settings-menu" class="hidden">
+    <div id="menu-header">
+      <h3>Settings</h3>
+      <button id="close-settings">✕</button>
+    </div>
+    
+    <div class="settings-section">
+      <h4>Color Theme</h4>
+      <select id="theme-selector">
+        <option value="default">Twitch Dark</option>
+        <option value="earth">Earth Tones</option>
+        <option value="vintage">Vintage PC</option>
+        <option value="ocean">Ocean</option>
+        <option value="midnight">Midnight</option>
+      </select>
+    </div>
+
+    <div class="settings-section">
+      <h4>Experimental</h4>
+      <label class="checkbox-label">
+        <input type="checkbox" id="compact-mode-toggle" />
+        <span>Compact Mode (Beta)</span>
+      </label>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
