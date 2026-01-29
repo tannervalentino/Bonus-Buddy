@@ -261,6 +261,59 @@ h1 {
   z-index: 1001;
 }
 
+#update-banner {
+  background: var(--accent);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#update-banner.hidden {
+  display: none;
+}
+
+.update-icon {
+  font-size: 24px;
+}
+
+.update-info {
+  flex: 1;
+}
+
+.update-title {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.update-version {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.update-button {
+  background: white;
+  color: var(--accent);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+  transition: transform 0.2s;
+}
+
+.update-button:hover {
+  transform: scale(1.05);
+}
+
+.update-button:active {
+  transform: scale(0.95);
+}
+
 #claimed-channels-menu.visible,
 #settings-menu.visible {
   transform: translateX(0);

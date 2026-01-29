@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Bonus Buddy",
-  "version": "2.3.0",
+  "version": "1.0.0",
   "description": "Automatically claims Twitch channel point bonuses and tracks your watch time",
   "permissions": ["storage", "scripting"],
   "host_permissions": ["*://*.twitch.tv/*"],

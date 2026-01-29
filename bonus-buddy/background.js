@@ -167,3 +167,45 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
     });
   }
 });
+
+// Update checker
+async function checkForUpdates() {
+  try {
+    const response = await fetch('https://api.github.com/repos/tannervalentino/Bonus-Buddy/releases/latest');
+    const data = await response.json();
+    const latestVersion = data.tag_name.replace('v', '');
+    const currentVersion = chrome.runtime.getManifest().version;
+    
+    console.log(`[Background] Current: ${currentVersion}, Latest: ${latestVersion}`);
+    
+    if (latestVersion !== currentVersion && compareVersions(latestVersion, currentVersion) > 0) {
+      chrome.storage.local.set({ 
+        updateAvailable: true, 
+        latestVersion,
+        downloadUrl: data.html_url
+      });
+      console.log(`[Background] Update available: ${latestVersion}`);
+    } else {
+      chrome.storage.local.set({ updateAvailable: false });
+    }
+  } catch (e) {
+    console.log("[Background] Update check failed:", e);
+  }
+}
+
+function compareVersions(a, b) {
+  const aParts = a.split('.').map(Number);
+  const bParts = b.split('.').map(Number);
+  
+  for (let i = 0; i < 3; i++) {
+    if (aParts[i] > bParts[i]) return 1;
+    if (aParts[i] < bParts[i]) return -1;
+  }
+  return 0;
+}
+
+// Check for updates on extension start
+checkForUpdates();
+
+// Check every 24 hours
+setInterval(checkForUpdates, 24 * 60 * 60 * 1000);

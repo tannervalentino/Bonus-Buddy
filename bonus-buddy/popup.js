@@ -14,6 +14,9 @@ const closeSettingsEl = document.getElementById("close-settings");
 const channelsListEl = document.getElementById("channels-list");
 const themeSelectorEl = document.getElementById("theme-selector");
 const compactModeToggleEl = document.getElementById("compact-mode-toggle");
+const updateBannerEl = document.getElementById("update-banner");
+const latestVersionEl = document.getElementById("latest-version");
+const downloadUpdateEl = document.getElementById("download-update");
 
 // Toggle claimed channels menu
 chartButtonEl.addEventListener("click", () => {
@@ -67,6 +70,25 @@ compactModeToggleEl.addEventListener('change', () => {
   }
   
   chrome.storage.local.set({ compactMode: isCompact });
+});
+
+// Update banner
+downloadUpdateEl.addEventListener('click', () => {
+  chrome.storage.local.get(['downloadUrl'], (res) => {
+    if (res.downloadUrl) {
+      chrome.tabs.create({ url: res.downloadUrl });
+    }
+  });
+});
+
+// Check for updates
+chrome.storage.local.get(['updateAvailable', 'latestVersion'], (res) => {
+  if (res.updateAvailable && res.latestVersion) {
+    updateBannerEl.classList.remove('hidden');
+    latestVersionEl.textContent = res.latestVersion;
+  } else {
+    updateBannerEl.classList.add('hidden');
+  }
 });
 
 // Load saved settings
